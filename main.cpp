@@ -55,10 +55,16 @@ class SamplePrinter
 };
 
 struct Test : public Reflectable<struct name_,      std::string,
-                                struct health_,    int,
-                                struct foo_,       Foo>
+                                 struct health_,    int,
+                                 struct foo_,       Foo>
 {
-    Test() : name(get<name_>()), health(get<health_>()), foo(get<foo_>())
+};
+
+struct TestReferences : public Reflectable<struct name_,      std::string,
+                                           struct health_,    int,
+                                           struct foo_,       Foo>
+{
+    TestReferences() : name(get<name_>()), health(get<health_>()), foo(get<foo_>())
     {
     }
 
@@ -123,10 +129,12 @@ int main()
     // ******************************************
     // Reflectable with reference benchmark
 
+    TestReferences testRef;
+
     time = clock();
     for (int i = 0; i < 100000000; i++)
     {
-        test.foo.i = i;
+        testRef.foo.i = i;
     }
     time = clock()-time;
     std::cout << "Reflectable with reference access: " << static_cast<float>(time)/CLOCKS_PER_SEC << "s\n";
