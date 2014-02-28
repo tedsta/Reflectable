@@ -32,23 +32,9 @@ With compiler optimizations (-O)
 	Reflectable access: 0.084s
 	Reflectable with reference access: 0.104s
 
-With compiler optimizations + (-O1)
+With compiler optimizations (-O1)
 
 	Raw for loop: 0.085s
 	Regular access: 0.085s
 	Reflectable access: 0.085s
 	Reflectable with reference access: 0.104s
-
-With compiler optimizations ++ (-O2)
-
-	Raw for loop: 0s
-	Regular access: 0s
-	Reflectable access: 0s
-	Reflectable with reference access: 0s
-
-With compiler optimizations +++ (-O3) MAXIMUM POOWWWWEERRRRR!!!!
-
-	Raw for loop: 0s
-	Regular access: 0s
-	Reflectable access: 0s
-	Reflectable with reference access: 0s
